@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://byidxdx53i50t"]
+
+[ext_resource type="PackedScene" uid="uid://bb6jma04m53mw" path="res://assets/scenes/room/Floor.tscn" id="1_8y77c"]
+[ext_resource type="PackedScene" uid="uid://jhw1nmp2heq4" path="res://assets/scenes/items/furniture/TVStand.tscn" id="3_1erii"]
+[ext_resource type="PackedScene" uid="uid://dg0x7e60kjtgo" path="res://assets/scenes/items/decorations/Poster.tscn" id="4_220a1"]
+[ext_resource type="Texture2D" uid="uid://cw032munv1eow" path="res://assets/images/bucket_hats.jpg" id="4_bpssn"]
+[ext_resource type="Texture2D" uid="uid://cvgieb8etnmj6" path="res://assets/images/extreme_skateboard.jpg" id="5_ce1op"]
+[ext_resource type="PackedScene" uid="uid://qpr2ayb7gmb6" path="res://assets/scenes/room/Walls.tscn" id="5_rw455"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5frdn"]
+albedo_texture = ExtResource("5_ce1op")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ympe"]
+albedo_texture = ExtResource("4_bpssn")
+
+[node name="90sRoom" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_8y77c")]
+
+[node name="TVStand" parent="." instance=ExtResource("3_1erii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48861, 0.147153, 0)
+
+[node name="PosterMeshInstance3D" parent="." instance=ExtResource("4_220a1")]
+transform = Transform3D(-4.37114e-08, 1, -4.80825e-08, 0, -4.37114e-08, -1.1, -1, -4.37114e-08, 2.10175e-15, -2.26038, 1.88392, -1.15497)
+
+[node name="PosterMeshInstance3D2" parent="." instance=ExtResource("4_220a1")]
+transform = Transform3D(-4.37114e-08, 1, -4.80825e-08, 0, -4.37114e-08, -1.1, -1, -4.37114e-08, 2.10175e-15, -2.26038, 1.88392, 1.32245)
+surface_material_override/0 = SubResource("StandardMaterial3D_5frdn")
+
+[node name="PosterMeshInstance3D3" parent="." instance=ExtResource("4_220a1")]
+transform = Transform3D(-4.37114e-08, -1, 4.80825e-08, 8.74228e-08, -4.37114e-08, -1.1, 1, -4.37114e-08, 9.61651e-08, 2.28345, 1.88392, 0.993353)
+surface_material_override/0 = SubResource("StandardMaterial3D_6ympe")
+
+[node name="Walls" parent="." instance=ExtResource("5_rw455")]

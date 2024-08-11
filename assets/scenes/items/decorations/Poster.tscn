@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg0x7e60kjtgo"]
+
+[ext_resource type="Texture2D" uid="uid://1h4agiuver3m" path="res://assets/images/extreme_team.jpg" id="1_wl2li"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pg1w1"]
+albedo_texture = ExtResource("1_wl2li")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7i8u2"]
+material = SubResource("StandardMaterial3D_pg1w1")
+size = Vector2(1, 1)
+
+[node name="PosterMeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.80825e-08, 0, -4.37114e-08, -1.1, -1, -4.37114e-08, 2.10175e-15, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7i8u2")
