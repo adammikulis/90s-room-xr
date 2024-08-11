@@ -1,7 +1,7 @@
 extends Marker3D
-class_name RigidBodyEmitter
+class_name Emitter
 
-@export var body_emitted_packed_scene: PackedScene
+@export var emitted_body: PackedScene
 @export var emit_force: float = 1.0
 @export var auto_shoot: bool = false
 @export var shots_per_second: float = 1.0
@@ -46,7 +46,7 @@ func on_timer_timeout():
 
 func emit_rigid_body():
 	# Instance body
-	var body = body_emitted_packed_scene.instantiate() as RigidBody3D
+	var body = emitted_body.instantiate() as RigidBody3D
 	body.global_transform = global_transform
 	get_tree().root.add_child(body)
 	# Apply force

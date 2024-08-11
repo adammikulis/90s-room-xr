@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2q5jtsqrnfod"]
-
-[ext_resource type="Script" path="res://assets/tools/rigid_body_emitter.gd" id="1_uggue"]
-
-[node name="RigidBodyEmitter" type="Marker3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0144447, 0, 0)
-script = ExtResource("1_uggue")

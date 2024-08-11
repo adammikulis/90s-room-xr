@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://1s6ltbksj3cg"]
 
-[ext_resource type="Script" path="res://assets/scenes/items/emitter.gd" id="1_g8aeu"]
+[ext_resource type="PackedScene" uid="uid://c4ddcegx5mqpm" path="res://assets/tools/Emitter.tscn" id="1_j4rft"]
 [ext_resource type="PackedScene" uid="uid://dl4260ihdv3xb" path="res://assets/scenes/items/toys/Balloon.tscn" id="3_s8rsi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4vvt"]
@@ -20,10 +20,6 @@ radius = 0.2
 
 [node name="BalloonEmitter" type="RigidBody3D"]
 mass = 10.0
-script = ExtResource("1_g8aeu")
-emitted_body = ExtResource("3_s8rsi")
-auto_shoot = true
-emission_direction = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
@@ -33,6 +29,8 @@ mesh = SubResource("CylinderMesh_argfu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_8cb2a")
 
-[node name="Marker3D" type="Marker3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.303321, 0)
+[node name="Emitter" parent="." instance=ExtResource("1_j4rft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328186, 0)
+emitted_body = ExtResource("3_s8rsi")
+auto_shoot = true
+emission_direction = 1

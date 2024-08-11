@@ -59,7 +59,7 @@ environment = SubResource("Environment_gwh10")
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(0.0218929, -0.145686, 0.989089, 0.00322388, 0.989331, 0.14565, -0.999755, 0, 0.022129, 0, 0.558806, 0)
+transform = Transform3D(0.0218929, -0.145686, 0.989089, 0.00322388, 0.989331, 0.14565, -0.999755, -4.42487e-09, 0.022129, 0, 0.958779, 0)
 
 [node name="LeftTrackedHand" type="XRNode3D" parent="XROrigin3D"]
 visible = false
@@ -127,10 +127,10 @@ enable_passthrough = true
 target_refresh_rate = 90.0
 
 [node name="DartGun" parent="." instance=ExtResource("9_ypdev")]
-transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -1.26591, 0.592528, -0.150796)
+transform = Transform3D(1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, -1.26591, 0.592528, -0.150796)
 
 [node name="DartGun2" parent="." instance=ExtResource("9_ypdev")]
-transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, -1.26591, 0.592528, 0.156223)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -1.32945, 0.592528, -0.291793)
 
 [node name="BalloonEmitter" parent="." instance=ExtResource("5_ifnul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34717, 5.96046e-08, -1.21242)
