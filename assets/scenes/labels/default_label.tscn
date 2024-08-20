@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bmwoe1kmd0q24"]
+
+[node name="DefaultLabel" type="Label3D"]

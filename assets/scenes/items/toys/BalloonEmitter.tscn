@@ -1,36 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://1s6ltbksj3cg"]
+[gd_scene load_steps=3 format=3 uid="uid://cuwu8l8tucsa8"]
 
-[ext_resource type="PackedScene" uid="uid://c4ddcegx5mqpm" path="res://assets/tools/Emitter.tscn" id="1_j4rft"]
-[ext_resource type="PackedScene" uid="uid://dl4260ihdv3xb" path="res://assets/scenes/items/toys/Balloon.tscn" id="3_s8rsi"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_tfn6k"]
+[ext_resource type="Script" path="res://assets/tools/emitter.gd" id="2_kxuky"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4vvt"]
-albedo_color = Color(0.304852, 0.348059, 0.496178, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_argfu"]
-material = SubResource("StandardMaterial3D_l4vvt")
-top_radius = 0.2
-bottom_radius = 0.2
-height = 0.3
-radial_segments = 32
-rings = 2
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_8cb2a"]
-height = 0.3
-radius = 0.2
-
-[node name="BalloonEmitter" type="RigidBody3D"]
-mass = 10.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-mesh = SubResource("CylinderMesh_argfu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-shape = SubResource("CylinderShape3D_8cb2a")
-
-[node name="Emitter" parent="." instance=ExtResource("1_j4rft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.328186, 0)
-emitted_body = ExtResource("3_s8rsi")
-auto_shoot = true
+[node name="Emitter" instance=ExtResource("1_tfn6k")]
+script = ExtResource("2_kxuky")
+emitted_body = null
+emit_force = 1.0
+auto_shoot = false
+shots_per_second = 1.0
+max_objects = -1
 emission_direction = 1
+
+[node name="Marker3D" type="Marker3D" parent="." index="1"]
+unique_name_in_owner = true

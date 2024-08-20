@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dtsu2iyspjlj3"]
+
+[node name="TableLabel" type="Label3D"]
+text = "Table"

@@ -1,23 +1,35 @@
-[gd_scene load_steps=25 format=3 uid="uid://uk57pht7fm3v"]
+[gd_scene load_steps=37 format=3 uid="uid://uk57pht7fm3v"]
 
-[ext_resource type="PackedScene" uid="uid://byidxdx53i50t" path="res://assets/scenes/room/90sRoom.tscn" id="2_d4tv1"]
-[ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="3_sdo6x"]
-[ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="4_d3q4j"]
-[ext_resource type="Script" path="res://addons/hand_pose_detector/hand_pose.gd" id="4_kryqs"]
-[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_rrnua"]
-[ext_resource type="Resource" uid="uid://dhbqusuodrl3r" path="res://addons/hand_pose_detector/poses/fist.tres" id="5_dd0us"]
-[ext_resource type="PackedScene" uid="uid://1s6ltbksj3cg" path="res://assets/scenes/items/toys/BalloonEmitter.tscn" id="5_ifnul"]
-[ext_resource type="Script" path="res://addons/hand_pose_detector/hand_pose_set.gd" id="7_6q4en"]
-[ext_resource type="PackedScene" uid="uid://bh8isvqs258cp" path="res://addons/hand_pose_detector/hand_pose_controller.tscn" id="7_57u3e"]
-[ext_resource type="PackedScene" uid="uid://dabmoo0spa6vg" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="8_ph7v4"]
-[ext_resource type="Script" path="res://addons/hand_pose_detector/hand_pose_action.gd" id="8_rlqxt"]
-[ext_resource type="Script" path="res://addons/hand_pose_detector/hand_pose_action_set.gd" id="9_g4tlq"]
-[ext_resource type="PackedScene" uid="uid://drc1asct03fe7" path="res://assets/scenes/items/toys/DartGun.tscn" id="9_ypdev"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="1_8mxdn"]
+[ext_resource type="PackedScene" uid="uid://bmwoe1kmd0q24" path="res://assets/scenes/labels/default_label.tscn" id="4_xdp7q"]
+[ext_resource type="PackedScene" uid="uid://ba0pcxk3mms3m" path="res://assets/scenes/labels/wall_label.tscn" id="7_jlkil"]
+[ext_resource type="PackedScene" uid="uid://bej8jedp4ptcs" path="res://assets/scenes/labels/invisible_wall_label.tscn" id="8_o7pg7"]
+[ext_resource type="PackedScene" uid="uid://dtsu2iyspjlj3" path="res://assets/scenes/labels/table_label.tscn" id="9_pjehx"]
+[ext_resource type="PackedScene" uid="uid://bakkoqasvnw0e" path="res://assets/scenes/labels/wall_art_label.tscn" id="9_ry40x"]
+[ext_resource type="PackedScene" uid="uid://c1c0ij7t8v2v8" path="res://assets/scenes/labels/couch_label.tscn" id="11_5di7p"]
+[ext_resource type="PackedScene" uid="uid://ctimo33mncqrw" path="res://assets/scenes/labels/screen_label.tscn" id="11_hu44n"]
 [ext_resource type="PackedScene" uid="uid://cigx2gnf4tg4d" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_fullglove_physics_hand.tscn" id="11_shbhm"]
+[ext_resource type="PackedScene" uid="uid://cdconx5pj5bsy" path="res://assets/scenes/labels/ceiling_label.tscn" id="12_6o17p"]
 [ext_resource type="PackedScene" uid="uid://nqiyqnx42m61" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_physics_hand.tscn" id="12_iycek"]
+[ext_resource type="PackedScene" uid="uid://uaqej5wvp0q4" path="res://assets/scenes/labels/bed_label.tscn" id="13_rivv8"]
+[ext_resource type="PackedScene" uid="uid://b20ny7u0dv1wl" path="res://assets/scenes/labels/door_label.tscn" id="13_w0ckr"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="14_2qetq"]
+[ext_resource type="PackedScene" uid="uid://by20e4r0islwo" path="res://assets/scenes/labels/floor_label.tscn" id="14_jllsn"]
+[ext_resource type="PackedScene" uid="uid://dmrjdi33uqkhx" path="res://assets/scenes/labels/lamp_label.tscn" id="14_p8pqq"]
+[ext_resource type="PackedScene" uid="uid://b587u0li7jvhk" path="res://assets/scenes/labels/window_label.tscn" id="14_wx7vg"]
+[ext_resource type="PackedScene" uid="uid://3ocpon50vx2p" path="res://assets/scenes/labels/plant_label.tscn" id="15_sd4v3"]
+[ext_resource type="PackedScene" uid="uid://nypm2irytxhx" path="res://assets/scenes/labels/storage_label.tscn" id="17_dci8e"]
+[ext_resource type="PackedScene" uid="uid://caambcrwpgiqc" path="res://assets/scenes/items/consumables/Can.tscn" id="17_ffps6"]
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="17_ntoj8"]
-[ext_resource type="PackedScene" uid="uid://caambcrwpgiqc" path="res://assets/scenes/items/consumables/Can.tscn" id="18_0286c"]
+[ext_resource type="PackedScene" uid="uid://bov6l7vcso3n2" path="res://assets/scenes/labels/global_mesh_label.tscn" id="18_i5xww"]
+[ext_resource type="PackedScene" uid="uid://bk1qkaks15vuy" path="res://assets/scenes/labels/other_label.tscn" id="19_biymg"]
+[ext_resource type="PackedScene" uid="uid://81x6ufbn464v" path="res://assets/scenes/items/toys/GolfBall.tscn" id="20_03e1o"]
+[ext_resource type="PackedScene" uid="uid://bb6jma04m53mw" path="res://assets/scenes/room/Floor.tscn" id="20_4xrb2"]
+[ext_resource type="PackedScene" uid="uid://dg0x7e60kjtgo" path="res://assets/scenes/items/decorations/Poster.tscn" id="21_omqg2"]
+[ext_resource type="Texture2D" uid="uid://cvgieb8etnmj6" path="res://assets/images/extreme_skateboard.jpg" id="22_h7x6l"]
+[ext_resource type="Texture2D" uid="uid://cw032munv1eow" path="res://assets/images/bucket_hats.jpg" id="23_irrn6"]
+[ext_resource type="PackedScene" uid="uid://cmfx12c1jwcog" path="res://assets/scenes/items/toys/PlushEmitter.tscn" id="29_o0nnk"]
+[ext_resource type="PackedScene" uid="uid://c5xgl7mbkhabu" path="res://assets/scenes/items/furniture/WoodenRack.tscn" id="33_fosq5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4hmv"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,19 +43,14 @@ background_mode = 2
 sky = SubResource("Sky_k204j")
 tonemap_mode = 3
 
-[sub_resource type="Resource" id="Resource_krtsu"]
-script = ExtResource("7_6q4en")
-poses = Array[ExtResource("4_kryqs")]([ExtResource("5_dd0us")])
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5frdn"]
+albedo_texture = ExtResource("22_h7x6l")
 
-[sub_resource type="Resource" id="Resource_1grcq"]
-script = ExtResource("8_rlqxt")
-pose = ExtResource("5_dd0us")
-action_type = 1
-action_name = "grip"
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ympe"]
+albedo_texture = ExtResource("23_irrn6")
 
-[sub_resource type="Resource" id="Resource_bjv64"]
-script = ExtResource("9_g4tlq")
-actions = Array[ExtResource("8_rlqxt")]([SubResource("Resource_1grcq")])
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jbfb"]
+size = Vector3(0.302673, 3.08984, 4.74536)
 
 [node name="Main" type="Node3D"]
 
@@ -59,103 +66,118 @@ environment = SubResource("Environment_gwh10")
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(0.0218929, -0.145686, 0.989089, 0.00322388, 0.989331, 0.14565, -0.999755, -4.42487e-09, 0.022129, 0, 0.958779, 0)
-
-[node name="LeftTrackedHand" type="XRNode3D" parent="XROrigin3D"]
-visible = false
-tracker = &"/user/hand_tracker/left"
-
-[node name="LeftHandHumanoid2" parent="XROrigin3D/LeftTrackedHand" instance=ExtResource("4_d3q4j")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/LeftTrackedHand/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
-
-[node name="HandPoseDetector" parent="XROrigin3D/LeftTrackedHand" instance=ExtResource("3_sdo6x")]
-hand_pose_set = SubResource("Resource_krtsu")
-
-[node name="HandPoseController" parent="XROrigin3D/LeftTrackedHand/HandPoseDetector" instance=ExtResource("7_57u3e")]
-tracker_name = "/user/hand_pose_controller/left"
-action_set = SubResource("Resource_bjv64")
-
-[node name="RightTrackedHand" type="XRNode3D" parent="XROrigin3D"]
-visible = false
-tracker = &"/user/hand_tracker/right"
-
-[node name="RightHandHumanoid2" parent="XROrigin3D/RightTrackedHand" instance=ExtResource("8_ph7v4")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/RightTrackedHand/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="1"]
-hand_tracker = &"/user/hand_tracker/right"
-
-[node name="HandPoseDetector" parent="XROrigin3D/RightTrackedHand" instance=ExtResource("3_sdo6x")]
-hand_pose_set = SubResource("Resource_krtsu")
-
-[node name="HandPoseController" parent="XROrigin3D/RightTrackedHand/HandPoseDetector" instance=ExtResource("7_57u3e")]
-tracker_name = "/user/hand_pose_controller/left"
-action_set = SubResource("Resource_bjv64")
-
-[node name="LeftVirtualController" type="XRController3D" parent="XROrigin3D"]
-visible = false
-tracker = &"/user/hand_pose_controller/left"
-
-[node name="FunctionPickup" parent="XROrigin3D/LeftVirtualController" instance=ExtResource("4_rrnua")]
-grab_distance = 0.1
-
-[node name="RightVirtualController" type="XRController3D" parent="XROrigin3D"]
-visible = false
-tracker = &"/user/hand_pose_controller/right"
-
-[node name="FunctionPickup" parent="XROrigin3D/RightVirtualController" instance=ExtResource("4_rrnua")]
-grab_distance = 0.1
 
 [node name="RightXRController3D" type="XRController3D" parent="XROrigin3D"]
 tracker = &"right_hand"
+pose = &"aim"
 
 [node name="RightPhysicsHand" parent="XROrigin3D/RightXRController3D" instance=ExtResource("11_shbhm")]
 
-[node name="FunctionPickup" parent="XROrigin3D/RightXRController3D" instance=ExtResource("4_rrnua")]
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/RightXRController3D"]
+script = ExtResource("1_8mxdn")
+grab_distance = 0.15
 
 [node name="LeftXRController" type="XRController3D" parent="XROrigin3D"]
 tracker = &"left_hand"
 
 [node name="LeftPhysicsHand" parent="XROrigin3D/LeftXRController" instance=ExtResource("12_iycek")]
 
-[node name="FunctionPickup" parent="XROrigin3D/LeftXRController" instance=ExtResource("4_rrnua")]
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/LeftXRController"]
+script = ExtResource("1_8mxdn")
+grab_distance = 0.15
 
-[node name="90sRoom" parent="." instance=ExtResource("2_d4tv1")]
+[node name="OpenXRFbSceneManager" type="OpenXRFbSceneManager" parent="XROrigin3D"]
+default_scene = ExtResource("4_xdp7q")
+scenes/ceiling = ExtResource("12_6o17p")
+scenes/door_frame = ExtResource("13_w0ckr")
+scenes/floor = ExtResource("14_jllsn")
+scenes/invisible_wall_face = ExtResource("8_o7pg7")
+scenes/wall_art = ExtResource("9_ry40x")
+scenes/wall_face = ExtResource("7_jlkil")
+scenes/window_frame = ExtResource("14_wx7vg")
+scenes/couch = ExtResource("11_5di7p")
+scenes/table = ExtResource("9_pjehx")
+scenes/bed = ExtResource("13_rivv8")
+scenes/lamp = ExtResource("14_p8pqq")
+scenes/plant = ExtResource("15_sd4v3")
+scenes/screen = ExtResource("11_hu44n")
+scenes/storage = ExtResource("17_dci8e")
+scenes/global_mesh = ExtResource("18_i5xww")
+scenes/other = ExtResource("19_biymg")
+
+[node name="90sRoom" type="Node3D" parent="."]
+
+[node name="PosterMeshInstance3D" parent="90sRoom" instance=ExtResource("21_omqg2")]
+transform = Transform3D(-4.37114e-08, 1, -4.80825e-08, 0, -4.37114e-08, -1.1, -1, -4.37114e-08, 2.10175e-15, -2.10589, 1.88392, -0.845605)
+
+[node name="PosterMeshInstance3D2" parent="90sRoom" instance=ExtResource("21_omqg2")]
+transform = Transform3D(-4.37114e-08, 1, -4.80825e-08, 0, -4.37114e-08, -1.1, -1, -4.37114e-08, 2.10175e-15, -2.10589, 1.88392, 0.83818)
+surface_material_override/0 = SubResource("StandardMaterial3D_5frdn")
+
+[node name="PosterMeshInstance3D3" parent="90sRoom" instance=ExtResource("21_omqg2")]
+transform = Transform3D(-4.37114e-08, -1, 4.80825e-08, 8.74228e-08, -4.37114e-08, -1.1, 1, -4.37114e-08, 9.61651e-08, 2.22039, 1.88392, 0.955161)
+surface_material_override/0 = SubResource("StandardMaterial3D_6ympe")
+
+[node name="Wall" type="StaticBody3D" parent="90sRoom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="90sRoom/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22797, 1.04492, -0.0287104)
+shape = SubResource("BoxShape3D_0jbfb")
+
+[node name="Wall2" type="StaticBody3D" parent="90sRoom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="90sRoom/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41271, 1.04492, -0.0287104)
+shape = SubResource("BoxShape3D_0jbfb")
+
+[node name="Wall3" type="StaticBody3D" parent="90sRoom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="90sRoom/Wall3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0914941, 1.04492, -1.93733)
+shape = SubResource("BoxShape3D_0jbfb")
+
+[node name="Wall4" type="StaticBody3D" parent="90sRoom"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="90sRoom/Wall4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0914941, 1.04492, 1.71494)
+shape = SubResource("BoxShape3D_0jbfb")
 
 [node name="StartXR" parent="." instance=ExtResource("14_2qetq")]
 enable_passthrough = true
 target_refresh_rate = 90.0
 
-[node name="DartGun" parent="." instance=ExtResource("9_ypdev")]
-transform = Transform3D(1.31134e-07, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.31134e-07, -5.73206e-15, -1.26591, 0.592528, -0.150796)
-
-[node name="DartGun2" parent="." instance=ExtResource("9_ypdev")]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -1.32945, 0.592528, -0.291793)
-
-[node name="BalloonEmitter" parent="." instance=ExtResource("5_ifnul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34717, 5.96046e-08, -1.21242)
-
-[node name="BalloonEmitter2" parent="." instance=ExtResource("5_ifnul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07507, -1.78814e-07, 1.72158)
-
-[node name="BalloonEmitter3" parent="." instance=ExtResource("5_ifnul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11949, -1.78814e-07, -1.29455)
-
-[node name="BalloonEmitter4" parent="." instance=ExtResource("5_ifnul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.460434, 5.96046e-08, 1.34164)
-
 [node name="VRCommonShaderCache" parent="." instance=ExtResource("17_ntoj8")]
 
-[node name="SodaCan" parent="." instance=ExtResource("18_0286c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42512, 0.522153, 0.315342)
+[node name="GolfBall" parent="." instance=ExtResource("20_03e1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516948, 0.924463, 0.801893)
 
-[node name="SodaCan3" parent="." instance=ExtResource("18_0286c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26041, 0.522153, 0.45049)
-selected_can_color = 2
+[node name="GolfBall2" parent="." instance=ExtResource("20_03e1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.481888, 0.924463, 0.891791)
 
-[node name="SodaCan2" parent="." instance=ExtResource("18_0286c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42236, 0.522153, 0.573754)
+[node name="GolfBall3" parent="." instance=ExtResource("20_03e1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.541188, 0.924463, 0.714033)
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Can" parent="Items" instance=ExtResource("17_ffps6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.780508, 0.611901, 1.16261)
+
+[node name="Can2" parent="Items" instance=ExtResource("17_ffps6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.639928, 0.611901, 0.967649)
 selected_can_color = 1
 
-[editable path="XROrigin3D/LeftTrackedHand/LeftHandHumanoid2"]
-[editable path="XROrigin3D/RightTrackedHand/RightHandHumanoid2"]
+[node name="Can3" parent="Items" instance=ExtResource("17_ffps6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8829, 0.611901, -0.612026)
+selected_can_color = 2
+
+[node name="PlushEmitter" parent="." instance=ExtResource("29_o0nnk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16133, 0, -0.779357)
+max_objects = 10
+
+[node name="Floor" parent="." instance=ExtResource("20_4xrb2")]
+
+[node name="WoodenRack" parent="." instance=ExtResource("33_fosq5")]
+transform = Transform3D(-0.727497, 0, 0.68611, 0, 1, 0, -0.68611, 0, -0.727497, -1.08212, 0, 1.32698)
+
+[node name="WoodenRack2" parent="." instance=ExtResource("33_fosq5")]
+transform = Transform3D(0.727497, 0, -0.68611, 0, 1, 0, 0.68611, 0, 0.727497, 1.64104, 0, -1.32765)

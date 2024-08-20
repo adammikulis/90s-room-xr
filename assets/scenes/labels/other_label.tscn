@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bk1qkaks15vuy"]
+
+[node name="OtherLabel" type="Label3D"]
+text = "Other"

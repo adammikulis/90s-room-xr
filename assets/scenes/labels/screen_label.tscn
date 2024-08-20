@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://ctimo33mncqrw"]
+
+[node name="ScreenLabel" type="Label3D"]
+text = "Screen"

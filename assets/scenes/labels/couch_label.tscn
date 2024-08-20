@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://c1c0ij7t8v2v8"]
+
+[node name="CouchLabel" type="Label3D"]
+text = "Couch"

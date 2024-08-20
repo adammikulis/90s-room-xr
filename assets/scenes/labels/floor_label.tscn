@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://by20e4r0islwo"]
+
+[node name="FloorLabel" type="Label3D"]
+text = "Floor"

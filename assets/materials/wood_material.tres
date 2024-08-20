@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://br4wqsuofr78d"]
+
+[ext_resource type="Texture2D" uid="uid://cubsufgv6uqy6" path="res://assets/textures/wood/background-board-brown-326311.jpg" id="1_mqwxh"]
+
+[resource]
+albedo_texture = ExtResource("1_mqwxh")

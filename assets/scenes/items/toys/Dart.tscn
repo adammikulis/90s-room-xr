@@ -1,8 +1,11 @@
 [gd_scene load_steps=10 format=4 uid="uid://0uqm1mwgrcbq"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3tj4i"]
-friction = 0.1
-bounce = 0.5
+[ext_resource type="Script" path="res://assets/scenes/items/toys/projectile.gd" id="1_31vo3"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_hgaro"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sinqp"]
+height = 0.075
+radius = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjw5f"]
 resource_name = "Nerf Orange"
@@ -25,7 +28,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jxl7n"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w2xms"]
 resource_name = "NerfDart_Cylinder_002"
 _surfaces = [{
 "aabb": AABB(-0.0338415, -0.0101001, -0.0101001, 0.0676829, 0.0202002, 0.0202002),
@@ -43,9 +46,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wm1k4")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5eigb"]
-points = PackedVector3Array(0.0338415, 0.0101001, -1.9772e-06, 0.0338415, 0.00874566, 0.00504808, 0.0338415, 0.00874566, -0.00505203, -0.0338415, 0.00874566, -0.00505203, -0.0338415, 0.0100981, -1.9772e-06, -0.0338415, 0.00874566, 0.00504808, 0.0338415, 0.00504808, 0.00874565, 0.0338415, 0.00504808, -0.00874763, -0.0338415, 0.00504808, -0.00874763, -0.0338415, 0.00504808, 0.00874565, 0.0338415, -1.97813e-06, 0.0101001, 0.0338415, -1.97813e-06, -0.0101001, -0.0338415, -1.97813e-06, -0.0101001, -0.0338415, -1.97813e-06, 0.0101001, 0.0338415, -0.00505204, 0.00874565, 0.0338415, -0.00505204, -0.00874763, -0.0338415, -0.00505204, -0.00874763, -0.0338415, -0.00505204, 0.00874565, 0.0338415, -0.00874763, 0.00504808, 0.0338415, -0.00874763, -0.00505203, -0.0338415, -0.00874763, -0.00505203, -0.0338415, -0.00874763, 0.00504808, 0.0338415, -0.0101001, -1.9772e-06, -0.0338415, -0.0101001, -1.9772e-06)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ks7nn"]
 resource_name = "Material.008"
@@ -68,7 +68,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wlecg"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ndair"]
 resource_name = "NerfDart_Cylinder_003"
 _surfaces = [{
 "aabb": AABB(-0.00550136, -0.0116334, -0.0116334, 0.010973, 0.0232668, 0.0232668),
@@ -87,31 +87,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ufjxx")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yi1ic"]
-points = PackedVector3Array(0.00547164, -2.27802e-06, 0.0116334, 0.00547056, 0.0116334, -2.27802e-06, 0.00547056, 0.0100733, 0.00581442, 0.00547056, 0.00581442, 0.0100733, -0.00550136, -2.27802e-06, 0.0116334, 0.00547164, -0.00581897, 0.0100733, 0.00547164, -2.27802e-06, -0.0116334, -0.00550136, 0.0116334, -2.27802e-06, 0.00547056, 0.0100733, -0.00581897, -0.00550136, 0.0100733, 0.00581442, -0.00550136, 0.00581442, 0.0100733, -0.00550136, -0.00581897, 0.0100733, 0.00547164, -0.0100756, 0.00581442, 0.00547056, 0.00581442, -0.0100756, 0.00547164, -0.00581897, -0.0100756, -0.00550136, -2.27802e-06, -0.0116334, -0.00550136, 0.0100733, -0.00581897, -0.00550136, -0.0100756, 0.00581442, 0.00547164, -0.0116334, -2.27802e-06, -0.00550136, 0.00581442, -0.0100756, -0.00550136, -0.00581897, -0.0100756, 0.00547164, -0.0100756, -0.00581897, -0.00550136, -0.0116334, -2.27802e-06, -0.00550136, -0.0100756, -0.00581897)
+[node name="Dart" instance=ExtResource("1_hgaro")]
+script = ExtResource("1_31vo3")
+despawn_time = -1.0
 
-[node name="Dart" type="RigidBody3D" groups=["ammo"]]
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_3tj4i")
-continuous_cd = true
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.00352001, 0, 0)
+shape = SubResource("CylinderShape3D_sinqp")
 
-[node name="Dart Body" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_jxl7n")
+[node name="Dart Body" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("ArrayMesh_w2xms")
 skeleton = NodePath("")
 
-[node name="BodyCollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_5eigb")
-
-[node name="Dart Tip" type="MeshInstance3D" parent="."]
+[node name="Dart Tip" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341198, 0, 0)
-mesh = SubResource("ArrayMesh_wlecg")
+mesh = SubResource("ArrayMesh_ndair")
 skeleton = NodePath("")
-
-[node name="TipCollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341198, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_yi1ic")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true

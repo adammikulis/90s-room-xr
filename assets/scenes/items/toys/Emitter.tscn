@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnni1mc4opnvy"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_eaj55"]
+[ext_resource type="Script" path="res://assets/tools/emitter.gd" id="2_qn6d4"]
+
+[node name="Emitter" instance=ExtResource("1_eaj55")]
+script = ExtResource("2_qn6d4")
+emitted_body = null
+emit_force = 1.0
+auto_shoot = false
+shots_per_second = 1.0
+max_objects = -1
+emission_direction = 1
+
+[node name="Marker3D" type="Marker3D" parent="." index="1"]
+unique_name_in_owner = true

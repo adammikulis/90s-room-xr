@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://81x6ufbn464v"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_5rfkv"]
+[ext_resource type="Texture2D" uid="uid://bxut24w3127cc" path="res://assets/textures/golf_ball_normal.jpg" id="2_hpbi2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wtxbj"]
+friction = 0.3
+bounce = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4ny36"]
+margin = 0.001
+radius = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdc7s"]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+roughness = 0.4
+normal_enabled = true
+normal_texture = ExtResource("2_hpbi2")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ik86v"]
+material = SubResource("StandardMaterial3D_wdc7s")
+radius = 0.02
+height = 0.04
+radial_segments = 16
+rings = 8
+
+[node name="GolfBall" instance=ExtResource("1_5rfkv")]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_wtxbj")
+continuous_cd = true
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_4ny36")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("SphereMesh_ik86v")

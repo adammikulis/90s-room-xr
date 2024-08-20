@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://b587u0li7jvhk"]
+
+[node name="WindowLabel" type="Label3D"]
+text = "Window"

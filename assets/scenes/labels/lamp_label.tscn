@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dmrjdi33uqkhx"]
+
+[node name="LampLabel" type="Label3D"]
+text = "Lamp"

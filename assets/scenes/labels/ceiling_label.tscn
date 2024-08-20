@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cdconx5pj5bsy"]
+
+[node name="CeilingLabel" type="Label3D"]
+text = "Ceiling"

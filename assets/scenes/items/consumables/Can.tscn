@@ -1,22 +1,27 @@
-[gd_scene load_steps=10 format=4 uid="uid://caambcrwpgiqc"]
+[gd_scene load_steps=8 format=4 uid="uid://caambcrwpgiqc"]
 
-[ext_resource type="Script" path="res://assets/scenes/items/consumables/can.gd" id="1_017ht"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_7tjm0"]
+[ext_resource type="Script" path="res://assets/scenes/items/consumables/can.gd" id="2_738mp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6is31"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cy07p"]
+height = 0.14
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r75ua"]
 resource_name = "Aluminum"
 cull_mode = 2
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 metallic = 1.0
 roughness = 0.3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcusj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6q11"]
 resource_name = "Red Aluminum"
 cull_mode = 2
-albedo_color = Color(0.698039, 0.823529, 0.203922, 1)
+albedo_color = Color(0.882351, 0.0235283, 0, 1)
 metallic = 1.0
 roughness = 0.252
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_k4d6h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8wh7b"]
 _surfaces = [{
 "aabb": AABB(-0.0493025, -0.067704, -0.0493025, 0.098605, 0.138047, 0.098605),
 "format": 34896613377,
@@ -41,7 +46,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_73mla"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_eerkg"]
 resource_name = "SodaCan_Cylinder_004"
 _surfaces = [{
 "aabb": AABB(-0.0493025, -0.067704, -0.0493025, 0.098605, 0.138047, 0.098605),
@@ -50,7 +55,7 @@ _surfaces = [{
 "index_count": 348,
 "index_data": PackedByteArray("TQAmACkATQBOACYATgArACYATgBQACsAUAAtACsAUABSAC0AUgAvAC0AUgBUAC8AVAAxAC8AVABWADEAVgAzADEAVgBYADMAWAA1ADMAWABaADUAWgA3ADUAWgBcADcAXAA5ADcAXABeADkAXgA7ADkAXgBgADsADABAAAkADABBAEAAYAA8ADsAYABiADwAYgAnADwAYgBMACcAIwAEAAEABAALAAgACwARAA4AEQAXABQAFwAdABoAHQAjACAAIwALAAQACwAXABEAFwAjAB0ACwAjABcAAwAlAAYAAwAoACUABgAqAAkABgAlACoACQAsAAwACQAqACwADAAuAA8ADAAsAC4ADwAwABIADwAuADAAEgAyABUAEgAwADIAFQA0ABgAFQAyADQAGAA2ABsAGAA0ADYAGwA4AB4AGwA2ADgAHgA6ACEAHgA4ADoAIQA9ACQAIQA6AD0AJAAoAAMAJAA9ACgAQAA/AD4APwBIAEkASABGAEcARgBEAEUARABCAEMAQgBAAEEAQABIAD8ASABEAEYARABAAEIASABAAEQAIQBHAB4AIQBIAEcAGABEABUAGABFAEQADwBBAAwADwBCAEEAJABIACEAJABJAEgABgA/AAMABgA+AD8AGwBFABgAGwBGAEUAEgBCAA8AEgBDAEIAAwBJACQAAwA/AEkACQA+AAYACQBAAD4AHgBGABsAHgBHAEYAFQBDABIAFQBEAEMAIgBKAGMAIgAAAEoAHwBjAGEAHwAiAGMAHABhAF8AHAAfAGEAGQBfAF0AGQAcAF8AFgBdAFsAFgAZAF0AEwBbAFkAEwAWAFsAEABZAFcAEAATAFkADQBXAFUADQAQAFcACgBVAFMACgANAFUABwBTAFEABwAKAFMABQBRAE8ABQAHAFEAAgBPAEsAAgAFAE8A"),
 "lods": [0.0141895, PackedByteArray("0wCwALMA0wDUALAA1AArALAA1ADWALUA1gDYALUA2ADbALkA2wDdALkA3QC8ALoA3QBYALwAWADhALwA4QC/AL0A4QBcAMAAXADkAMAA5ADDAMEA5ADnAMMA5wDEAMMA5wDpAMQA6QBMALEA6QCxADwA2QC4ALYArgCmAKMApwCvAKsAKAAlAD4APgAlACoAQQAqAC4AQwAuADIARQAyADYARwA2ADoAOgA9AM4AzgA9ACgAsgDFAM4AxgDOAMUAtADGAMUAwgDOAM0AtwDJAMYAywDHAMkAuwDLAMkAzwDKAM0AvgDNAMoA0ADIAMwArADRAOoArACiANEArADqAOgArADoAOUAqADmAOMAqACtAOYAqADjAOIAqQDiAOAAqQDgAN4ApQDfANwApQCqAN8ApQDcANoApQDaANcApQDXANUApAClANUApADVANIA"), 0.0587339, PackedByteArray("fABwAG8AfQB+AHEAfwCCAHIAggCFAHIAhQCIAHIAiACLAHIAjACPAHMAkACTAHQAlACWAHUAlwCZAHYAmgCcAHcAnQCfAHgAnwBtAHkAoAB7AG4AZgB6AKEAZgBkAHoAZgChAJ4AZgCeAJsAZgCbAJgAZwCYAJUAZwCVAJEAaACSAI0AaQCOAIkAagCKAIYAawCHAIMAbACEAIAAZQBsAIAAZQCBAEsA")],
-"material": SubResource("StandardMaterial3D_6is31"),
+"material": SubResource("StandardMaterial3D_r75ua"),
 "name": "Aluminum",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -62,66 +67,29 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 72,
 "index_data": PackedByteArray("GQACABgAGQAAAAIAFwAYABYAFwAZABgAFQAWABQAFQAXABYAEwAUABIAEwAVABQAEQASABAAEQATABIADwAQAA4ADwARABAADQAOAAwADQAPAA4ACwAMAAoACwANAAwACQAKAAgACQALAAoABwAIAAYABwAJAAgABQAGAAQABQAHAAYAAQAEAAMAAQAFAAQA"),
-"material": SubResource("StandardMaterial3D_mcusj"),
-"name": "Colored Aluminum",
+"material": SubResource("StandardMaterial3D_v6q11"),
+"name": "Red Aluminum",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 26,
 "vertex_data": PackedByteArray("/38AAAAA////fwAAAAD///9///8AAP///3///wAA////v///JhGp6v+/AAAmEanq2O7///8/VNXY7gAA/z9U1f//////f/+///8AAP9//7/Y7v///7+pqtjuAAD/v6mq/7///9juVJX/vwAA2O5Ulf9//////wCA/38AAP//AID/P///2O5Ulf8/AADY7lSVJhH///+/qaomEQAA/7+pqgAA////f/+/AAAAAP9//78mEf///z9U1SYRAAD/P1TV/z///yYRqer/PwAAJhGp6v9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////3////9/////f///")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_k4d6h")
+shadow_mesh = SubResource("ArrayMesh_8wh7b")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h1rog"]
-points = PackedVector3Array(-0.0252494, -0.0660502, -0.0420991, 0.00418133, 0.0683555, 0.0481821, 0.0208183, 0.0679588, 0.0437243, -0.00418489, 0.0683542, -0.0481812, 0.0481828, -0.0657173, -0.00417873, -0.0420884, -0.0660417, 0.02526, -0.0481802, 0.0683607, -0.00418844, 0.0252589, -0.0660349, 0.0420895, 0.0481828, 0.0683563, -0.00417873, 0.0252589, -0.0660349, -0.0420895, -0.0252494, 0.0686892, 0.0420991, -0.00418489, -0.0657151, 0.0481812, 0.0420965, 0.0686844, -0.0252519, 0.0420965, 0.0686844, 0.0252519, -0.0481802, -0.0657217, -0.00418844, -0.0420884, 0.0686807, -0.02526, 0.0420965, -0.0660454, 0.0252519, 0.0252589, 0.068674, -0.0420895, -0.0420884, 0.0686807, 0.02526, 0.00418133, -0.0657164, -0.0481821, -0.0252494, 0.0686892, -0.0420991, -0.0252494, -0.0660502, 0.0420991, 0.0420965, -0.0660454, -0.0252519, -0.0420884, -0.0660417, -0.02526, -0.0481802, 0.0683607, 0.00418843, 0.0481828, 0.0683563, 0.00417872, 0.00418133, -0.0657165, 0.0481821, -0.0481802, -0.0657217, 0.00418843, 0.00418133, 0.0683555, -0.0481821, 0.0481828, -0.0657173, 0.00417872, -0.00418489, 0.0683542, 0.0481812, -0.00418489, -0.0657151, -0.0481812, 0.0252589, 0.068674, 0.0420895)
+[node name="Can" instance=ExtResource("1_7tjm0")]
+script = ExtResource("2_738mp")
+selected_can_color = 0
+n_liquid_ounces = 12.0
+liquid_density = 1.03
+carbonation_factor = 1.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_vl5b8"]
-height = 0.015
-radius = 0.055
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0697445, 0)
+shape = SubResource("CylinderShape3D_cy07p")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jemb1"]
-transparency = 1
-albedo_color = Color(0.698, 0.824, 0.204, 0.691)
-emission_enabled = true
-emission = Color(0.522414, 0.617939, 0.150877, 1)
-emission_energy_multiplier = 1.5
-
-[sub_resource type="SphereMesh" id="SphereMesh_55ydr"]
-material = SubResource("StandardMaterial3D_jemb1")
-radius = 0.01
-height = 0.02
-radial_segments = 16
-rings = 8
-
-[node name="Can" type="RigidBody3D"]
-script = ExtResource("1_017ht")
-
-[node name="CanMesh3D" type="MeshInstance3D" parent="."]
+[node name="CanMesh3D" type="MeshInstance3D" parent="." index="1"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0678672, 0)
-mesh = SubResource("ArrayMesh_73mla")
+mesh = SubResource("ArrayMesh_eerkg")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0678672, 0)
-shape = SubResource("ConvexPolygonShape3D_h1rog")
-
-[node name="Area3D" type="Area3D" parent="."]
-unique_name_in_owner = true
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.133988, 0)
-shape = SubResource("CylinderShape3D_vl5b8")
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221366, 0.14222, 0)
-emitting = false
-amount = 64
-lifetime = 3.0
-mesh = SubResource("SphereMesh_55ydr")
-direction = Vector3(0, 1, 0)
-spread = 3.0
-initial_velocity_min = 3.0
-initial_velocity_max = 5.0
-linear_accel_max = 4.51

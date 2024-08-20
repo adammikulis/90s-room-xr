@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmfx12c1jwcog"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_jfgf7"]
+[ext_resource type="Script" path="res://assets/tools/emitter.gd" id="2_ju4ut"]
+[ext_resource type="PackedScene" uid="uid://b7mrcpr3y5141" path="res://assets/scenes/items/toys/GodotPlush.tscn" id="3_6jw0o"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="4_h4n3k"]
+[ext_resource type="Material" uid="uid://de15ke0ux0qnq" path="res://assets/textures/Highlight.tres" id="5_e6m0c"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ifec6"]
+height = 0.3
+radius = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4vvt"]
+albedo_color = Color(0.298737, 0.373013, 0.36798, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xlsca"]
+material = SubResource("StandardMaterial3D_l4vvt")
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.3
+radial_segments = 32
+rings = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qs7dd"]
+material = ExtResource("5_e6m0c")
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.3
+radial_segments = 32
+rings = 2
+
+[node name="PlushEmitter" groups=["weapon"] instance=ExtResource("1_jfgf7")]
+mass = 10.0
+script = ExtResource("2_ju4ut")
+emitted_body = ExtResource("3_6jw0o")
+emit_force = 3.0
+auto_shoot = true
+shots_per_second = 3.0
+max_objects = 25
+emission_direction = 1
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("CylinderShape3D_ifec6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("CylinderMesh_xlsca")
+
+[node name="Marker3D" type="Marker3D" parent="." index="2"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.322815, 0)
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="3"]
+script = ExtResource("4_h4n3k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("CylinderMesh_qs7dd")

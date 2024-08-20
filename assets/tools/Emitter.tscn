@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4ddcegx5mqpm"]
-
-[ext_resource type="Script" path="res://assets/tools/emitter.gd" id="1_jafau"]
-
-[node name="Emitter" type="Marker3D"]
-script = ExtResource("1_jafau")

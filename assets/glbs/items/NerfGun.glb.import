@@ -34,13 +34,11 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Gun Body": {
-"generate/physics": true,
 "physics/body_type": 1,
 "physics/layer": 2,
 "physics/mask": 3
 },
 "PATH:Gun Body/Gun Handle": {
-"generate/physics": true,
 "physics/body_type": 1,
 "physics/layer": 6,
 "physics/mask": 131075
