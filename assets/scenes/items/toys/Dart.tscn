@@ -88,6 +88,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ufjxx")
 
 [node name="Dart" instance=ExtResource("1_hgaro")]
+continuous_cd = true
 script = ExtResource("1_31vo3")
 despawn_time = -1.0
 

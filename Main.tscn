@@ -159,25 +159,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.541188, 0.924463, 0.714033
 
 [node name="Items" type="Node" parent="."]
 
-[node name="Can" parent="Items" instance=ExtResource("17_ffps6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.780508, 0.611901, 1.16261)
-
-[node name="Can2" parent="Items" instance=ExtResource("17_ffps6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.639928, 0.611901, 0.967649)
-selected_can_color = 1
-
 [node name="Can3" parent="Items" instance=ExtResource("17_ffps6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8829, 0.611901, -0.612026)
 selected_can_color = 2
 
-[node name="PlushEmitter" parent="." instance=ExtResource("29_o0nnk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16133, 0, -0.779357)
-max_objects = 10
-
 [node name="Floor" parent="." instance=ExtResource("20_4xrb2")]
 
-[node name="WoodenRack" parent="." instance=ExtResource("33_fosq5")]
-transform = Transform3D(-0.727497, 0, 0.68611, 0, 1, 0, -0.68611, 0, -0.727497, -1.08212, 0, 1.32698)
+[node name="Ceiling" parent="." instance=ExtResource("20_4xrb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74038, 0)
 
-[node name="WoodenRack2" parent="." instance=ExtResource("33_fosq5")]
-transform = Transform3D(0.727497, 0, -0.68611, 0, 1, 0, 0.68611, 0, 0.727497, 1.64104, 0, -1.32765)
+[node name="WoodenRack" parent="." instance=ExtResource("33_fosq5")]
+transform = Transform3D(0.727497, 0, -0.68611, 0, 1, 0, 0.68611, 0, 0.727497, 1.13086, 0, -1.00886)
+
+[node name="PlushEmitter" parent="." instance=ExtResource("29_o0nnk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58337, -7.15256e-07, -0.985209)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PlushEmitter"]
+transform = Transform3D(-1, -3.91663e-08, 1.18001e-08, -3.13355e-08, 0.918908, 0.394471, -2.62932e-08, 0.394471, -0.918908, 1.47022, 1.79279, -1.79834)
+light_color = Color(0.868237, 0.873454, 0.839062, 1)
+light_energy = 0.5
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="PlushEmitter"]
+transform = Transform3D(1.74182e-08, 0.394471, -0.918908, -3.13355e-08, 0.918908, 0.394471, 1, 2.19234e-08, 2.83667e-08, -1.25034, 1.79279, 0.906853)
+light_color = Color(0.868237, 0.873454, 0.839062, 1)
+light_energy = 0.5
+
+[node name="PlushEmitter2" parent="." instance=ExtResource("29_o0nnk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963344, -7.15256e-07, 1.06029)

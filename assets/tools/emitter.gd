@@ -57,7 +57,7 @@ func emit_body():
 	if max_objects != -1 and _active_bodies.size() >= max_objects:
 		# Recycle the oldest body
 		body = _active_bodies.pop_front()
-		body.global_transform = emit_location.global_transform
+		body.queue_free()
 	else:
 		# Instance a new body
 		body = emitted_body.instantiate()

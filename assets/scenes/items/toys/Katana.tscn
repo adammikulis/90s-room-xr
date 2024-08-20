@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://buorbays8qhkt"]
+[gd_scene load_steps=24 format=4 uid="uid://buorbays8qhkt"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_wrx4l"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="2_vsi3o"]
@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_8r0xu"]
 [ext_resource type="Animation" uid="uid://plad1r85f7ws" path="res://addons/godot-xr-tools/hands/animations/left/Grip.res" id="6_o522g"]
 [ext_resource type="Material" uid="uid://de15ke0ux0qnq" path="res://assets/textures/Highlight.tres" id="7_bkpml"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="7_cnrhy"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="7_gy0ka"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="8_1dv6m"]
 [ext_resource type="Texture2D" uid="uid://b33hdok7p2x0i" path="res://assets/glbs/items/Katana_DefaultMaterial_Base_Color.png" id="8_iiwla"]
+[ext_resource type="Texture2D" uid="uid://cnljbkwikytbr" path="res://assets/glbs/items/katana/DefaultMaterial_Mixed_AO.png" id="9_3eogi"]
 [ext_resource type="Texture2D" uid="uid://ch2br1w0fc07h" path="res://assets/glbs/items/Katana_DefaultMaterial_Metallic.png-DefaultMaterial_Roughness.png" id="9_6dvo2"]
-[ext_resource type="Texture2D" uid="uid://d6terecap3lw" path="res://assets/glbs/items/Katana_DefaultMaterial_Normal.png" id="10_vohgn"]
+[ext_resource type="Texture2D" uid="uid://bpi3vbwv2qv4c" path="res://assets/glbs/items/katana/DefaultMaterial_Height.png" id="10_8awyh"]
+[ext_resource type="Texture2D" uid="uid://bjpm4y6puphwp" path="res://assets/glbs/items/katana/DefaultMaterial_Normal.png" id="10_fybxy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gjrgc"]
 friction = 0.2
@@ -39,7 +42,14 @@ metallic_texture_channel = 2
 roughness_texture = ExtResource("9_6dvo2")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("10_vohgn")
+normal_texture = ExtResource("10_fybxy")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("9_3eogi")
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("10_8awyh")
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_q70a0"]
 _surfaces = [{
@@ -97,32 +107,46 @@ shadow_mesh = SubResource("ArrayMesh_q70a0")
 [node name="Katana" instance=ExtResource("1_wrx4l")]
 mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_gjrgc")
+ranged_grab_method = 2
 second_hand_grab = 2
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("ConvexPolygonShape3D_nn0lj")
 
 [node name="GrabPointHandRight" parent="." index="1" instance=ExtResource("2_vsi3o")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0936338, 0.0181204, 0.0176855)
-visible = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.101944, 0.0112676, 0.0176855)
 mode = 1
 hand_pose = SubResource("Resource_gkde2")
 
 [node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("5_8r0xu")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0846276, -0.0875462, -0.0176583)
-visible = true
 mode = 2
 hand_pose = SubResource("Resource_r1lsl")
 
-[node name="GrabPointSnap" parent="." index="3" groups=["toy", "weapon"] instance=ExtResource("7_gy0ka")]
+[node name="GrabPointHandRight2" type="Marker3D" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0846276, -0.0875462, 0.0117032)
+visible = false
+script = ExtResource("7_cnrhy")
+hand = 1
+mode = 2
+hand_pose = SubResource("Resource_gkde2")
+
+[node name="GrabPointHandLeft2" type="Marker3D" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.101944, 0.0112676, -0.0131817)
+visible = false
+script = ExtResource("7_cnrhy")
+mode = 1
+hand_pose = SubResource("Resource_r1lsl")
+
+[node name="GrabPointSnap" parent="." index="5" groups=["toy", "weapon"] instance=ExtResource("7_gy0ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00237048, 0.261458, 0)
 
-[node name="Blade_LP" type="MeshInstance3D" parent="." index="4"]
+[node name="Blade_LP" type="MeshInstance3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0673321, 0)
 mesh = SubResource("ArrayMesh_pl54j")
 skeleton = NodePath("")
 
-[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="5"]
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="7"]
 script = ExtResource("8_1dv6m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]

@@ -27,7 +27,6 @@ rings = 8
 [node name="GolfBall" instance=ExtResource("1_5rfkv")]
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_wtxbj")
-continuous_cd = true
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("SphereShape3D_4ny36")

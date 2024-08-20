@@ -269,6 +269,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fsy4j")
 
 [node name="Putter" instance=ExtResource("1_0npu0")]
+ranged_grab_method = 2
 
 [node name="CollisionShape3D" parent="." index="0" groups=["toy", "weapon"]]
 transform = Transform3D(0.991883, -0.127151, 0, 0.127151, 0.991883, 0, 0, 0, 1, 0, 0.400801, 0)
