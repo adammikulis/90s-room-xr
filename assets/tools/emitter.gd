@@ -7,7 +7,9 @@ extends XRToolsPickable
 @export var shots_per_second: float = 1.0
 @export var max_objects: int = -1  # -1 means infinite
 
+
 @onready var emit_location = get_node("%Marker3D")
+@onready var audio_stream = get_node("%AudioStreamPlayer3D")
 
 enum EmissionBasis {
 	X,
@@ -62,6 +64,8 @@ func emit_body():
 		# Instance a new body
 		body = emitted_body.instantiate()
 		if body:
+			if audio_stream.stream != null:
+				audio_stream.play()
 			body.global_transform = emit_location.global_transform
 			get_tree().root.add_child(body)
 			_active_bodies.append(body)

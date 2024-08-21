@@ -104,9 +104,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q70a0")
 
-[node name="Katana" instance=ExtResource("1_wrx4l")]
+[node name="Katana" groups=["blade", "weapon"] instance=ExtResource("1_wrx4l")]
 mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_gjrgc")
+contact_monitor = true
+max_contacts_reported = 4
 ranged_grab_method = 2
 second_hand_grab = 2
 

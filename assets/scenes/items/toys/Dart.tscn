@@ -1,9 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://0uqm1mwgrcbq"]
+[gd_scene load_steps=11 format=4 uid="uid://0uqm1mwgrcbq"]
 
 [ext_resource type="Script" path="res://assets/scenes/items/toys/projectile.gd" id="1_31vo3"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_hgaro"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f32xr"]
+friction = 0.9
+bounce = 0.5
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sinqp"]
+margin = 0.001
 height = 0.075
 radius = 0.01
 
@@ -88,6 +93,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ufjxx")
 
 [node name="Dart" instance=ExtResource("1_hgaro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, 0, 0)
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_f32xr")
 continuous_cd = true
 script = ExtResource("1_31vo3")
 despawn_time = -1.0

@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 ammo="Ammunition"
 toy=""
 weapon=""
+blade=""
 
 [layer_names]
 
